@@ -1,0 +1,18 @@
+{
+  "name": "property-custodian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "end": "nodemon server.js"
+  },
+  "author": "domerck",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mongoose": "^5.10.10"
+  }
+}

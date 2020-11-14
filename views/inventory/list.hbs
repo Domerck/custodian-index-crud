@@ -1,0 +1,36 @@
+<div style="height: 100vh; overflow: auto;">
+    <div style="padding: 0px 60px">
+        <a class="btn btn-primary" href="/inventory" style="padding:12px 28px; font-size:20px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"><i class="fa fa-plus"></i> Create New Item</a> 
+        <h1 align="center" style="margin-top: 40px;">Inventory of Items</h1>
+    </div>
+
+    <table class="table table-striped table-active">
+        <thead>
+            <tr align="center">
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Unit Price(PHP)</th>
+                <th>Total Price(PHP)</th>
+                <th>Date Received</th>
+                <th>User</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each list}}
+                <tr id={{this._id}} align="center">
+                    <td>{{this.itemName}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.unitPrice}}</td>
+                    <td>{{this.total}}</td>
+                    <td>{{this.dateReceived}}</td>
+                    <td>{{this.users}}</td>
+                    <td>
+                        <a href="/inventory/{{this._id}}" style="padding: 5px; margin:0px 3px; background-color:slateblue; border-radius:6px; text-align:center; color:white;"> Edit </a>
+                        <a href="/inventory/delete/{{this._id}}" onclick="return confirm('Delete this record ?');" style="padding: 5px; margin: 0px 3px; background-color:tomato; border-radius:6px; text-align:center; color:white;"> Delete </a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

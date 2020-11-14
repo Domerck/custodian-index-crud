@@ -1,0 +1,55 @@
+<!-- Obtaining value from the inventory controller -->
+<h1 align="center" style="border: #ACB0DE dashed 6px;">{{viewTitle}}</h3>
+
+<form action="/inventory" method="POST" autocomplete="off" style="padding-top: 40px">
+
+<input type="hidden" name="_id" value="{{inventory._id}}">
+
+<div class = "form-group">
+    <label>Item Name</label>
+    <input type="text" maxlength="100" class="form-control" name="itemName" placeholder="Enter Name of Item" style="font-size:20px;" value="{{inventory.itemName}}">
+        <div class="text-danger">
+            {{inventory.itemNameError}}
+    </div>
+
+</div>
+
+
+<div class = "form-row">
+
+        <div class = "form-group col-md-6">
+            <label>Quantity</label>
+            <input type="number" min='1' max='99999' class="form-control" name="quantity" placeholder="Number of Items" style="font-size:20px;" value="{{inventory.quantity}}">
+        </div>
+
+        <div class = "form-group col-md-6">
+            <label>Unit Price</label>
+            <input type="number" min='1' max='99999' class="form-control" name="unitPrice" placeholder="Item Price(Ph Peso)" style="font-size:20px;" value="{{inventory.unitPrice}}">
+        </div>
+
+        <div class = "form-group col-md-6">
+            <label>Date Received</label>
+            <input type="date" class="form-control" name="dateReceived" style="font-size:20px;" value="{{inventory.dateReceived}}">
+        </div>
+
+        <div class = "form-group col-md-6">
+            <label>Users</label>
+            <select type="text" class="form-control" name="users" style="font-size:20px; height:45px;" value="{{inventory.users}}">
+                <option value="Students">Students</option>
+                <option value="Teachers">Teachers</option>
+                <option value="Faculty">Faculty (Non-teaching personels)</option>
+                <option value="Admin">Admin</option>
+                <option value="Utilities">Utilities</option>
+            </select>
+        </div>
+</div>
+
+
+
+
+<div class="form-group" style="padding-top: 30px;" align='right'>
+    <button type="submit" class="btn btn-success" style="padding:14px 30px; font-size:20px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"><i class="fa fa-database"></i> Submit</button>
+    <a class="btn btn-info" href="/inventory/list" style="padding:14px 30px; font-size:20px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"><i class="fa fa-list-alt"></i> View All Items</a>
+</div>
+
+</form>
